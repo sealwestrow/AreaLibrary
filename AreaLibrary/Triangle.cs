@@ -2,39 +2,16 @@
 
 namespace AreaLibrary
 {
-    public class Triangle
+    public class Triangle : Figure
     {
         private double[] _sides = new double[3];
-        public double[] Sides 
-        { 
-            get
-            {
-                return _sides;
-            }
-            set 
-            {
-                for (int i = 0; i < 3; i++)
-                {
-                    if (value[i] < 0)
-                    {
-                        throw new ArgumentException("Сторона меньше нуля");
-                    }
-                    else
-                    {
-                        _sides[i] = value[i];
-                    }
-                }
-            }
-            
-        }
 
 
         public Triangle(double[] sl)
         {
-            Sides = sl;
-            
+            Sides = sl;         
         }
-        public double GetArea()
+        public override double GetArea()
         {
             double p = 0;
             foreach (var l in Sides)
